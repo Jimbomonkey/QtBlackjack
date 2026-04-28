@@ -7,7 +7,7 @@
 #include <QGroupBox>
 #include <QThread>
 #include <QLabel>
-#include <QSound>
+#include <QSoundEffect>
 
 #include <QtWidgets>
 

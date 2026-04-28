@@ -1,6 +1,9 @@
-O.*
-blackjack
-moc_*
+# Build Artifacts
 *.o
+moc_*
 qrc_Blackjack.cpp
 Makefile
+.qmake.stash
+
+# Executables
+blackjack

@@ -16,8 +16,7 @@
 
 ChipPile::ChipPile(QWidget *parent, bool AcceptDrops): QStackedWidget(parent)
 {
-
-	QRect Screen = QApplication::desktop()->screenGeometry();
+	QRect Screen = QGuiApplication::primaryScreen()->geometry();
 
 	float wScale = Screen.width() / 1920.0;
 	float hScale = Screen.height() / 1080.0;
@@ -164,7 +163,7 @@ void ChipPile::dropEvent(QDropEvent *event)
 				// giving it the same pixmap
 				Chip *newIcon = new Chip(this);
 				newIcon->setPixmap(pixmap);
-				newIcon->move(event->pos() - offset);
+				newIcon->move(event->position().toPoint() - offset);
 				newIcon->show();
 				// Raise it to ensure it sits on the top of the pile
 				newIcon->raise();
@@ -212,7 +211,7 @@ void ChipPile::mousePressEvent(QMouseEvent *event)
 	Chip *child = static_cast<Chip*>(childAt(event->pos()));
 
 	// If object is disabled or not created then ignore
-	if(Active == false or child == false)
+	if(Active == false || child == nullptr)
 	{
 		return;
 	}
@@ -239,7 +238,7 @@ void ChipPile::mousePressEvent(QMouseEvent *event)
 	// Set the cursor to a gripping hand
 	setCursor(Qt::ClosedHandCursor);
 
-	QPixmap pixmap = *child->pixmap();
+	QPixmap pixmap = child->pixmap();
 
 	// Setup a QByteArray and QDataStream in order to drag custom data
 	QByteArray ChipData;

@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	MainWindow window;
 	
 	// Find out the user's screen resolution
-	QRect Screen = QApplication::desktop()->screenGeometry();
+	QRect Screen = QGuiApplication::primaryScreen()->geometry();
 	qDebug() << "Screen width =" << Screen.width() << "\nScreen height =" << Screen.height();
 
 	// Set the window geometry using the calculated scaling factors
