@@ -356,7 +356,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 	AboutBoxMapper->setMapping(LicenceButton, 2);
 	AboutBoxMapper->setMapping(CreditsButton, 3);
 	AboutBoxMapper->setMapping(AboutButton, 1);
-	connect(AboutBoxMapper, SIGNAL(mapped(int)), this, SLOT(ChangeAboutBoxText(int)));
+	connect(AboutBoxMapper, SIGNAL(mappedInt(int)), this, SLOT(ChangeAboutBoxText(int)));
 
     QVBoxLayout *PicLayout = new QVBoxLayout();
 	PicLayout->addWidget(labelAboutPicture);
@@ -455,7 +455,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 	ButtonMapping->setMapping(NewGame, 8);
 
 	// Connect the signal map to the game thread
-	connect(ButtonMapping, SIGNAL(mapped(int)), myThread, SLOT(ChoiceMade(int)));
+	connect(ButtonMapping, SIGNAL(mappedInt(int)), myThread, SLOT(ChoiceMade(int)));
 
 	// Chip piles need re-raising to be clickable on some systems
 	FivePile->raise();
