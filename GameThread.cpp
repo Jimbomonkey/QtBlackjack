@@ -17,7 +17,7 @@ GameThread::GameThread()
 // Thread destructor
 GameThread::~GameThread()
 {
-	qDebug() << "arghhh you've destroyed me!" << endl;
+	qDebug() << "arghhh you've destroyed me!";
 }
 
 // Custom sleep function which can 
@@ -290,7 +290,7 @@ int GameThread::CheckChoice()
 
 void GameThread::ChoiceMade(int ButtonIndex)
 {
-	qDebug() << "button " << ButtonIndex << " was pressed" << endl;
+	qDebug() << "button " << ButtonIndex << " was pressed";
 	ButtonChoice = ButtonIndex;
 	emit Choice();
 }
@@ -373,7 +373,7 @@ bool GameThread::PlayersPlay(Table& BlackJackTable, Croupier& Dealer)
 				else if(CheckChoice() == 8)
 				{
 					PlayersStanding = false;
-					qDebug() << endl << "Player trying to start a new game...." << endl;
+					qDebug() << "\nPlayer trying to start a new game....";
 					return PlayersStanding;
 				}
 				/* Certain plays can only happen if player is holding two cards (regardless of whether first go or not) */
@@ -717,7 +717,7 @@ void GameThread::SettleBets(Table& BlackJackTable, Croupier& Dealer)
 
 void GameThread::ReturnBet(int ReturnedChipValue)
 {
-	qDebug() << "You returned a chip of value = " << ReturnedChipValue << endl;
+	qDebug() << "You returned a chip of value = " << ReturnedChipValue;
 	Box* CurrentBox = BlackJackTable.GetBox(0);
 	CurrentBox->ReturnToStack(ReturnedChipValue);
 }

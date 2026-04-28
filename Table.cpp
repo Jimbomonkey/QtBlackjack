@@ -6,11 +6,11 @@ void Table::ListPlayers() const
 {
 	unsigned int i;
 
-	qDebug() << endl << "There are " << Boxes.size() << " players sat at the table: " << endl << endl;
+	qDebug() << "\nThere are " << Boxes.size() << " players sat at the table: ";
 
 	for (i = 0; i < Boxes.size(); i++)
 	{
-		qDebug() << "  Player " << i+1 << " with a stack of " << Boxes.at(i)->CountStack() << endl;
+		qDebug() << "  Player " << i+1 << " with a stack of " << Boxes.at(i)->CountStack();
 	}
 }
 
@@ -37,9 +37,9 @@ void Table::RemoveBox(const int BoxIndex)
 
 void Table::Clear()
 {
-	qDebug() << "Boxes = " << Boxes.size() << endl;
+	qDebug() << "Boxes = " << Boxes.size();
 	Boxes.clear();
-	qDebug() << "Boxes = " << Boxes.size() << endl;
+	qDebug() << "Boxes = " << Boxes.size();
 }
 
 /* Count the number of boxes in use at the table (including split boxes) */

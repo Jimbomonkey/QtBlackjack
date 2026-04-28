@@ -62,7 +62,7 @@ const Card Croupier::Deal()
 	string CompareString = Shoe[NextCard].GetName();
 	if (CompareString.compare("Cut") == 0)
 	{	
-		qDebug() << "Cut card reached. Reshuffling cards...." << endl << endl;
+		qDebug() << "Cut card reached. Reshuffling cards....";
 		/* Move the cut card to the end of the pack so that it isn't shuffled */
 		TempStore = Shoe[ShoeSize];
 		Shoe[ShoeSize] = Shoe[NextCard];
@@ -121,7 +121,7 @@ void Croupier::List()
 	/* Run through all the cards in the shoe (including the cut card, hence the +1) */
 	for(i = 0; i < ShoeSize + 1; i++)
 	{
-		qDebug() << i << "	" << Shoe[i].GetName() << " of " << Shoe[i].GetSuit() << " has the value " << Shoe[i].GetValue() << endl;
+		qDebug() << i << "	" << Shoe[i].GetName() << " of " << Shoe[i].GetSuit() << " has the value " << Shoe[i].GetValue();
 	}
 }
 
@@ -157,7 +157,7 @@ void Croupier::ListHand()
 	
 	for(i = 0; i < Hand.size(); i++)
 	{
-		qDebug() << "  " << Hand.at(i).GetName () << " of " << Hand.at(i).GetSuit() << endl;
+		qDebug() << "  " << Hand.at(i).GetName () << " of " << Hand.at(i).GetSuit();
 		QString CardName = Hand.at(i).GetName();
 		QString CardSuit = Hand.at(i).GetSuit();
 		QString LoadCardName = ":/DealerCards/" + CardName + CardSuit + ".png";
