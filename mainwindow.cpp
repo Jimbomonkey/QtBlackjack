@@ -4,7 +4,7 @@
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 {
 	// Find out the user's screen resolution
-	QRect Screen = QApplication::desktop()->screenGeometry();
+	QRect Screen = QGuiApplication::primaryScreen()->geometry();
 
 	/* Scale = User's screen size / My screen size */
 	XScale = Screen.width() / 1920.0;

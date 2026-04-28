@@ -16,8 +16,7 @@
 
 ChipPile::ChipPile(QWidget *parent, bool AcceptDrops): QStackedWidget(parent)
 {
-
-	QRect Screen = QApplication::desktop()->screenGeometry();
+	QRect Screen = QGuiApplication::primaryScreen()->geometry();
 
 	float wScale = Screen.width() / 1920.0;
 	float hScale = Screen.height() / 1080.0;
