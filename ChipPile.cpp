@@ -163,7 +163,7 @@ void ChipPile::dropEvent(QDropEvent *event)
 				// giving it the same pixmap
 				Chip *newIcon = new Chip(this);
 				newIcon->setPixmap(pixmap);
-				newIcon->move(event->pos() - offset);
+				newIcon->move(event->position().toPoint() - offset);
 				newIcon->show();
 				// Raise it to ensure it sits on the top of the pile
 				newIcon->raise();
