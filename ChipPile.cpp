@@ -212,7 +212,7 @@ void ChipPile::mousePressEvent(QMouseEvent *event)
 	Chip *child = static_cast<Chip*>(childAt(event->pos()));
 
 	// If object is disabled or not created then ignore
-	if(Active == false or child == false)
+	if(Active == false || child == nullptr)
 	{
 		return;
 	}
