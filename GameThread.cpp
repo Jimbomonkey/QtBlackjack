@@ -810,7 +810,7 @@ void GameThread::run()
 	if(CheckChoice() != 8)
 	{
 		emit UpdateGameStatus("Game Over");
-		QString qstr = QString::fromStdString("You've run out of playable money!\n\nWould you like to play again?");
+		QString qstr = QString::fromStdString("You've run out of playable money!\nWould you like to play again?");
 		UpdateResultsSummary(qstr);
 	}
 	ButtonChoice = 0;
