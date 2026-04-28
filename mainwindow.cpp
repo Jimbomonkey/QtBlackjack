@@ -589,7 +589,20 @@ void MainWindow::PlaySound(QString SoundFile)
 {
 	if (ToggleSound->isChecked())
 	{
-		QSound::play(SoundFile);
+        QSoundEffect *SoundEffect = new QSoundEffect(this);
+        
+        // Convert the string path to a QUrl
+        SoundEffect->setSource(QUrl::fromLocalFile(SoundFile));
+              
+        // Delete the object automatically once it finishes playing to prevent memory leaks
+        connect(SoundEffect, &QSoundEffect::playingChanged, [SoundEffect]() 
+		{
+            if (!SoundEffect->isPlaying()) 
+			{
+                SoundEffect->deleteLater();
+            }
+        });
+        SoundEffect->play();
 	}
 }
 
