@@ -238,7 +238,7 @@ void ChipPile::mousePressEvent(QMouseEvent *event)
 	// Set the cursor to a gripping hand
 	setCursor(Qt::ClosedHandCursor);
 
-	QPixmap pixmap = *child->pixmap();
+	QPixmap pixmap = child->pixmap();
 
 	// Setup a QByteArray and QDataStream in order to drag custom data
 	QByteArray ChipData;
