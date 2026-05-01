@@ -1,34 +1,46 @@
-QtBlackjack
-===========
+# QtBlackjack
 
-A blackjack game with a Qt GUI. This game aims to mimic the version played at casinos, allowing you to double, split (infinitely), surrender, and place insurance bets.
+A C++/Qt6 desktop blackjack game that closely follows real casino rules, including doubling, splitting (with unlimited resplits), surrendering, and insurance bets. Features drag‑and‑drop chip betting and sound effects.
 
-To build, just run qmake from within the directory, followed by make. To run, just enter ./blackjack
+## Features
 
-You start with 100 units in your stack and drag and drop chips to place your bet.
+- Follows casino‑style blackjack rules
+- Drag‑and‑drop chip betting with Qt6 user interface
+- Doubling, splitting, surrendering, and insurance
+- Automatic ace value adjustment
+- Sound effects for actions and results
 
-The game will let you know what options you have at every stage of play.
+## Screenshots
 
-After your turn, the dealer plays, before a summary of the scores is displayed. The dealer will keep drawing to 17 or higher.
+![Main window](screenshots/screenshot.png)
+![Blackjack](screenshots/blackjack.png)
+![Bust](screenshots/bust.png)
 
-If you run out of money, the game will end (with an option to start again).
+## How To Play
 
-Hitting will draw another card for your hand. If you draw over 21 you will go bust for that hand.
+See `HOW_TO_PLAY.md` for full rules and explanations of all actions
 
-Aces are valued as either 1 or 11 to the player's convenience. If you are holding ace/s the game will automatically adjust your hand value to your advantage.
+## Building from Source
 
-Standing will end your play on a round. You will stand automatically if you draw to 21.
+### Requirements
 
-Doubling will double your bet and will draw one more card only. It can only be chosen on the initial play of a hand.
+- Qt 6.x
+- C++ 13+ compiler
+- qmake6
 
-Splitting is possible if you have two cards of the same value. Splitting will separate these two cards and will draw a new card against each one, creating 2 hands from one. This game allows for infinite splits, so if you keep drawing the same value cards, you can keep splitting (as long as you can afford it!) It can only be chosen on the initial play of a hand.
+### Build (qmake)
 
-Surrendering returns half of your bet to the dealer and you skip the round.
+```bash
+qmake6
+make
+./blackjack
+```
 
-If the dealer is showing an ace on their initial hand, and you can afford it, you will be offered insurance. This is a side bet of half of your original bet. If you accept this offer, and the dealer has blackjack, you win this insurance bet. If the dealer doesn't have blackjack, you lose this insurance bet.
+## Contributing
 
-Sound FX can be toggled on or off from the menu.
+See `CONTRIBUTING.md` for guidelines on pull requests and testing requirements.
 
-Enjoy!
+## License
 
-JimboMonkey
+GPL-3.0. See `LICENSE` for details.
+
